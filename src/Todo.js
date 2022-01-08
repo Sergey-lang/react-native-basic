@@ -1,24 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export const Navbar = ({title}) => {
+export const Todo = ({ todo, onRemove }) => {
+  const removeTodo = () => onRemove(todo.id);
+
   return (
-    <View style={styles.navbar}>
-      <Text style={styles.text}>{title}</Text>
-    </View>
+    <TouchableOpacity onPress={() => {
+    }} onLongPress={removeTodo}>
+      <View style={styles.todo}>
+        <Text style={styles.text}>{todo.title}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  navbar: {
-    height: 70,
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    backgroundColor: '#3949ab',
-    paddingBottom: 10,
+  todo: {
+    borderWidth: 1,
+    borderColor: '#eee',
+    borderRadius: 10,
+    marginTop: 20,
+    padding: 15,
+    backgroundColor: '#ffc600',
+    fontSize: 24
   },
-  text: {
-    color: '#fff',
-    fontSize: 20,
-  }
 });
