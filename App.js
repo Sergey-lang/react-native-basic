@@ -5,6 +5,7 @@ import * as Font from 'expo-font';
 import { MainScreen } from './src/screens/MainScreen';
 import { TodoScreen } from './src/screens/TodoScreen';
 import AppLoading from 'expo-app-loading';
+import { THEME } from './src/theme';
 
 const mock = [
   { id: '1', title: 'My first todo' },
@@ -99,7 +100,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 30,
+    paddingHorizontal: THEME.PADDING_HORIZONTAL,
     paddingVertical: 30,
   },
 });
