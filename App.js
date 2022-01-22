@@ -3,11 +3,7 @@ import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 import { MainLayout } from './src/MainLayout';
 import { TodoState } from './src/context/todo/todoState';
-
-const mock = [
-  { id: '1', title: 'My first todo' },
-  { id: '2', title: 'My second todo' },
-];
+import { ScreenState } from './src/context/screen/screenState';
 
 async function loadApp() {
   await Font.loadAsync({
@@ -29,8 +25,10 @@ export default function App() {
   }
 
   return (
-    <TodoState>
-      <MainLayout />
-    </TodoState>
+   <ScreenState>
+     <TodoState>
+       <MainLayout />
+     </TodoState>
+   </ScreenState>
   );
 }
